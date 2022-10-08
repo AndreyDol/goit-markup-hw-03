@@ -5,7 +5,7 @@
   --main-line-height: 1.14;
   --main-letter-spacing: 0.03em;
   /*кольори*/
-  --main-header-color: #212121;
+  --main-title-color: #212121;
   --main-bg-color: #ffffff;
   --main-font-color: #757575;
   --second-bg-color: #2f303a;
@@ -24,6 +24,50 @@ body {
   color: var(--main-font-color);
   background-color: var(--main-bg-color);
 }
+/* reset-------------------- */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+address {
+  font-style: normal;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  width:1200px;
+   outline: 2px solid tomato; 
+  padding-left: 15px;
+   padding-right: 15px;
+   margin: 0 auto;
+}
+
+.section{padding-top: 94px;
+padding-bottom: 94px;}
+
 
 .link {
   text-decoration: none;
@@ -32,23 +76,45 @@ body {
 .list {
   list-style: none;
 }
-/*-----------head--------------------------------*/
+/*-----------header--------------------------------*/
+.header-nav{
+  display: flex;
+  gap:93px;
+align-items: center;
+}
+
+.list-nav{
+  display: flex;
+  align-items: center;
+gap: 50px;
+}
+.nav-item:nth-child(4) {
+  margin-left: 290px;
+}
+.header-border{
+  border-bottom: 1px solid #ECECEC;
+}
 .logo {
-  font-family: "Raleway";
+  font-family: "Raleway",sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   color: var(--logo-bg-color);
+margin-top: 24px;
+margin-bottom: 25px;
 }
 .logo-span {
   color: var(--logo-span);
 }
 
 .head-nav {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  color: var(--main-header-color);
+  color: var(--main-title-color);
 }
 .header-nav-tel {
   color: var(--main-font-color);
@@ -70,7 +136,18 @@ body {
 }
 
 /*section Ефективні рішення для вашого бізнесу*/
-.solution-header {
+.hero-container{
+display: block;
+text-align: center;
+}
+
+.solution-title {
+  max-width: 696px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-top: 0;
+  padding-top: 200px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -80,11 +157,13 @@ body {
   color: var(--main-bg-color);
 }
 .solution-btn {
+  margin-bottom: 200px;
   cursor: pointer;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
-  /*display: flex;*/
+  width: 216px;
+  height: 50px; 
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
@@ -103,21 +182,37 @@ body {
   background-color: var(--second-bg-color);
 }
 /*section Переваги Вебстудіо*/
-.benefits-header {
+.benefits-list{
+  display: flex;
+gap: 30px;}
+.benefits-list-item{
+  width:calc((100%-3*30px)/4);
+}
+
+.benefits-title {
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
-  color: var(--main-header-color);
+  color: var(--main-title-color);
 }
 /*---------section Чим ми займаємося------------*/
+.work-section{padding-top: 0;}
+.work-list-item{width: calc((100%-2*30px)/3);}
+.work-list{
+  display: flex;
+ /* flex-wrap: wrap; */
+ gap: 30px;
+}
 
-.work-header {
+.work-title {
+  margin-bottom: 50px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
-  color: var(--main-header-color);
+  color: var(--main-title-color);
 }
 
 /*---------section Наша команда------------*/
@@ -128,19 +223,19 @@ body {
 .team-bg-ing {
   background-color: var(--main-bg-color);
 }
-.team-header {
+.team-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
-  color: var(--main-header-color);
+  color: var(--main-title-color);
 }
 .team-name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
-  color: var(--main-header-color);
+  color: var(--main-title-color);
 }
 .team-work {
   font-size: 16px;
@@ -182,14 +277,14 @@ body {
 /*проєкти і фільтри------------------*/
 .filter-btn {
   cursor: pointer;
-  font-family: "Roboto";
+  font-family: var(--main-font);
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
-  color: var(--main-header-color);
+  color: var(--main-title-color);
   background-color: var(--team-bg-color);
   border: none;
 }
@@ -205,10 +300,10 @@ body {
 .project-paragraph {
   line-height: 1.88;
 }
-.project-header {
+.project-title {
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  color: var(--main-header-color);
+  color: var(--main-title-color);
 }
